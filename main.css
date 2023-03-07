@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&family=Playfair+Display&display=swap');
 
+html {
+    font-family: 'Libre Franklin', serif;
+    font-size: 14px;
+    line-height: 24px;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -23,7 +29,19 @@ a {
 header {
     border-bottom: solid 2px #0000001A;
     padding: 8px 0px;
-    height: 120px;
+}
+
+nav {
+    display: flex;
+    align-items: inherit;
+}
+
+footer {
+    background-color: #F5F7F8;
+    padding: 12px 0px;
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 42px;
 }
 
 .wrapper {
@@ -35,8 +53,8 @@ header {
 .header__flex {
     display: flex;
     flex-flow: row nowrap;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-between;
 }
 
 .main__flex {
@@ -47,15 +65,47 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-align: center;
+}
+
+.footer__leftBlock {
+    display: flex;
+}
+
+.header__nav a {
+    margin-right: 32px;
+}
+
+.header__nav a:last-child {
+    margin: 0px;
+}
+
+.header__links {
+    display: flex;
+}
+
+.vertical-dash::before {
+    display: block;
+    content: "";
+    width: 2px;
+    height: 48px;
+    background-color: #0000001A;
+    align-self: center;
+}
+
+.main__images {
+    position: relative;
 }
 
 header a {
     font-family: 'Playfair Display', serif;
     font-size: 18px;
+    line-height: 24px;
+    margin: 48px 0px;
 }
 
-footer p {
-    font-family: 'Libre Franklin', serif;
+nav div {
+    padding: 0px 16px;
 }
 
 main h1 {
@@ -66,9 +116,7 @@ main h1 {
 }
 
 main p {
-    font-family: 'Libre Franklin', serif;
-    font-size: 14px;
-    line-height: 24px;
+    margin: 16px 0px;
 }
 
 main a {
@@ -76,18 +124,57 @@ main a {
 }
 
 footer p {
-    font-family: 'Libre Franklin', serif;
+    margin: 0;
+}
+
+footer p:first-child {
+    margin-right: 48px;
 }
 
 .btn {
     background-color: #375C78;
     color: white;
-    padding: 8px 24px;
+    padding: 12px 32px;
     font-size: 15px;
 }
 
 .lnk {
     color: #375C78;
-    padding: 8px 24px;
+    padding: 12px 32px;
     font-size: 15px;
+}
+
+.logo {
+    height: 104px;
+}
+
+.social {
+    height: 32px;
+    padding: 4px;
+}
+
+@media screen and (max-width: 730px) {
+    .wrapper {
+        padding: 0px 16px;
+    }
+
+    .footer__flex {
+        display: block;
+    }
+
+    .footer__leftBlock {
+        display: block;
+    }
+    
+    footer p {
+        margin-bottom: 4px;
+    }
+
+    footer p:first-child {
+        margin: auto;
+    }
+
+    footer p:last-child {
+        margin: 0;
+    }
 }
