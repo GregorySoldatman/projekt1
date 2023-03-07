@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&family=Playfair+Display&display=swap');
+@import url(./burger/style.css);
 
 html {
     font-family: 'Libre Franklin', serif;
@@ -129,6 +130,11 @@ footer p {
 
 footer p:first-child {
     margin-right: 48px;
+}
+
+.pipe {
+    padding: 0px 8px;
+    user-select: none;
 }
 
 .btn {

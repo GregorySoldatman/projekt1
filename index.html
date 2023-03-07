@@ -26,6 +26,9 @@
                         <a href="#"><img src="./grafika/MDI - linkedin.svg" alt="linkedin"  class="social"></a>
                     </div>
                 </nav>
+                <button class="burger-menu">
+                    <span class="burger-menu__dash"></span>
+                </button>
             </div>
         </div>
     </header>
@@ -64,7 +67,7 @@
                 <div class="footer__leftBlock">
                     <p>&#169;2022 Biuro Calma</p>
                     <p>
-                        <a href="#">Kontakt</a> | <a href="#">Polityka prywatności</a>
+                        <a href="#">Kontakt</a><span class="pipe">|</span><a href="#">Polityka prywatności</a>
                     </p>
                 </div>
                 <div class="footer__rightBlock">
@@ -73,5 +76,26 @@
             </div>
         </div>
     </footer>
+    <script>
+        const button = document.querySelector(".burger-menu");
+        const mobileMenu = document.querySelector("nav");
+        button.addEventListener("click", () => {
+            if (button.classList.contains("active")) {
+                button.classList.remove("active");
+                mobileMenu.classList.remove("active");
+                button.classList.add("buffer");
+                setTimeout(() => {
+                    button.classList.add("inactive");
+                    button.classList.remove("buffer");
+                }, 1);
+            } else {
+                button.classList.remove("inactive");
+                mobileMenu.classList.add("active");
+                setTimeout(() => {
+                    button.classList.add("active");
+                }, 1);
+            }
+        });
+    </script>
 </body>
 </html>

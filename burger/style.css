@@ -1,0 +1,125 @@
+.burger-menu {
+    display: inline-block;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+}
+
+.burger-menu:hover {
+    cursor: pointer;
+}
+
+
+
+.burger-menu.inactive::before {
+    animation: top-dash .5s reverse;
+}
+
+.burger-menu.inactive .burger-menu__dash {
+    animation: mid-dash .5s reverse;
+}
+
+.burger-menu.inactive::after {
+    animation: bot-dash .5s reverse;
+}
+
+
+
+.burger-menu.buffer::before {
+    transform: translateY(14px) rotate(45deg);
+}
+
+.burger-menu.buffer .burger-menu__dash {
+    transform: scaleX(0);
+}
+
+.burger-menu.buffer::after {
+    transform: translateY(-14px) rotate(-45deg);
+}
+
+
+
+.burger-menu.active::before {
+    animation: top-dash .5s forwards;
+}
+
+.burger-menu.active .burger-menu__dash {
+    animation: mid-dash .5s forwards;
+}
+
+.burger-menu.active::after {
+    animation: bot-dash .5s forwards;
+}
+
+
+.burger-menu::before {
+    content: "";
+    display: block;
+    position: absolute;
+        top: 0;
+        left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: #111C24;
+}
+
+.burger-menu__dash {
+    display: block;
+    position: absolute;
+        top: 14px;
+        left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: #111C24;
+}
+
+.burger-menu::after {
+    display: block;
+    content: "";
+    position: absolute;
+        top: 28px;
+        left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: #111C24;
+}
+
+@keyframes top-dash {
+    0% {
+        transform: translateY(0%) rotate(0deg);
+    }
+    50% {
+        transform: translateY(14px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(14px) rotate(45deg);
+    }
+}
+
+@keyframes mid-dash {
+    0% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(0);
+    }
+}
+
+@keyframes bot-dash {
+    0% {
+        transform: translateY(0%) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-14px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-14px) rotate(-45deg);
+    }
+}
