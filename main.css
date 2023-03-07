@@ -1,1 +1,93 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&family=Playfair+Display&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body * {
+    box-sizing: border-box;
+    color: #111C24;
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    border-bottom: solid 2px #0000001A;
+    padding: 8px 0px;
+    height: 120px;
+}
+
+.wrapper {
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.header__flex {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main__flex {
+    display: flex;
+}
+
+.footer__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+}
+
+footer p {
+    font-family: 'Libre Franklin', serif;
+}
+
+main h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: normal;
+    line-height: 86px;
+}
+
+main p {
+    font-family: 'Libre Franklin', serif;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+main a {
+    font-family: 'Playfair Display', serif;
+}
+
+footer p {
+    font-family: 'Libre Franklin', serif;
+}
+
+.btn {
+    background-color: #375C78;
+    color: white;
+    padding: 8px 24px;
+    font-size: 15px;
+}
+
+.lnk {
+    color: #375C78;
+    padding: 8px 24px;
+    font-size: 15px;
+}
