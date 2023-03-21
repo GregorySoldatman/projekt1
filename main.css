@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&family=Playfair+Display&display=swap');
 @import url(./burger/style.css);
 
+/* STYLE GLOBALNE */
 html {
     font-family: 'Libre Franklin', serif;
     font-size: 14px;
@@ -10,7 +11,6 @@ html {
 body {
     margin: 0;
     padding: 0;
-    min-height: 100vh;
     overflow-x: hidden;
 }
 
@@ -27,13 +27,28 @@ a {
     text-decoration: none;
 }
 
+/* KONIEC STYLI GLOBALNYCGH */
+
+
+
+
 header {
-    border-bottom: solid 2px #0000001A;
+    position: fixed;
+        top: 0;
+        left: 0;
+    width: 100%;
     padding: 8px 0px;
+    background-color: white;
+    border-bottom: solid 2px #0000001A;
+}
+
+header + * {
+    margin-top: 122px;
 }
 
 nav {
     display: flex;
+    margin-left: auto;
     align-items: inherit;
 }
 
@@ -42,7 +57,6 @@ footer {
     padding: 12px 0px;
     font-size: 14px;
     line-height: 20px;
-    min-height: 42px;
 }
 
 .wrapper {
@@ -54,12 +68,22 @@ footer {
 .header__flex {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around;
     align-items: center;
 }
 
 .main__flex {
     display: flex;
+    align-items: center;
+}
+
+.keep-height {
+    min-height: calc(100vh - 122px - 44px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.main-images__wrapper{
+    position: relative;
 }
 
 .footer__flex {
@@ -92,24 +116,40 @@ footer {
     height: 48px;
     background-color: #0000001A;
     align-self: center;
+    margin: 0px 32px;
+}
+
+.main__content {
+    width: 40%;
+    padding: 64px 0px;
 }
 
 .main__images {
-    position: relative;
+    position: absolute;
+        top: 50%;
+        right: 0;
+    transform: translateY(-50%);
 }
 
-header a {
+.books {
+    height: 55vh;
+}
+
+.kalk {
+    height: 55vh;
+    position: absolute;
+    top: 30%;
+    right: 55%;
+}
+
+.header__link {
     font-family: 'Playfair Display', serif;
     font-size: 18px;
     line-height: 24px;
-    margin: 48px 0px;
-}
-
-nav div {
-    padding: 0px 16px;
 }
 
 main h1 {
+    margin: 0 0 32px 0;
     font-family: 'Playfair Display', serif;
     font-size: 64px;
     font-weight: normal;
@@ -118,6 +158,10 @@ main h1 {
 
 main p {
     margin: 16px 0px;
+}
+
+.main__text {
+    margin-bottom: 32px;
 }
 
 main a {
@@ -138,16 +182,16 @@ footer p:first-child {
 }
 
 .btn {
+    display: inline-block;
     background-color: #375C78;
     color: white;
     padding: 12px 32px;
     font-size: 15px;
 }
 
-.lnk {
+.btn-white {
     color: #375C78;
-    padding: 12px 32px;
-    font-size: 15px;
+    background-color: transparent;
 }
 
 .logo {
@@ -159,7 +203,19 @@ footer p:first-child {
     padding: 4px;
 }
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 1220px) {
+    .books {
+        height: 50vh;
+    }
+    
+    .kalk {
+        height: 50vh;
+        top: 25%;
+        right: 35%;
+    } 
+}
+
+@media screen and (max-width: 960px) {
     .wrapper {
         padding: 0px 16px;
     }
@@ -170,6 +226,44 @@ footer p:first-child {
 
     .footer__leftBlock {
         display: block;
+    }
+
+    header {
+        justify-content: unset;
+        align-items: unset;
+    }
+
+    header + * {
+        margin-top: 98px;
+    }
+
+    nav {
+        flex-flow: column nowrap;
+        position: fixed;
+            left: 0px;
+            top: 98px;
+        width: 100%;
+        background-color: #fff;
+        height: calc(100% - 98px);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        will-change: transform;
+        overflow-y: auto;
+    }
+
+    nav.active {
+        transform: translateX(0%);
+    }
+
+    .header__nav {
+        margin: 32px 0px;
+    }
+
+    .header__nav a {
+        display: block;
+        margin: 0;
+        padding: 16px;
+        text-align: center;
     }
     
     footer p {
@@ -182,5 +276,30 @@ footer p:first-child {
 
     footer p:last-child {
         margin: 0;
+    }
+
+    .burger-menu {
+        display: inline-block;
+        margin-left: auto;
+    }
+
+    .vertical-dash::before {
+        display: none;
+    }
+
+    .main__images {
+        display: none;
+    }
+
+    .main__content {
+        width: 100%;
+    }
+
+    .social {
+        height: 48px;
+    }
+
+    .logo {
+        height: 80px;
     }
 }
